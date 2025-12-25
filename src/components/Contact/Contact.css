@@ -1,0 +1,52 @@
+.contact-section {
+  background-color: #f0f2f5; /* Çok hafif gri arka plan */
+}
+
+/* Kart Tasarımı */
+.contact-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid #0dcaf0; /* Üstte ince cyan çizgi */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Input Alanları Özelleştirme */
+.form-floating > .form-control {
+  border: 2px solid #eee;
+  border-radius: 10px;
+}
+
+.form-floating > .form-control:focus {
+  border-color: #0dcaf0; /* Focus olunca cyan */
+  box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
+}
+
+.form-floating > label {
+  color: #aaa;
+}
+
+/* Gönder Butonu */
+.btn-send {
+  background-color: #212529; /* Koyu gri/Siyah */
+  color: #fff;
+  padding: 12px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-send:hover {
+  background-color: #0dcaf0; /* Hover'da cyan */
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(13, 202, 240, 0.4);
+}

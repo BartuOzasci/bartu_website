@@ -1,0 +1,84 @@
+/* Footer stilleri */
+.footer-wrapper {
+  background-color: #1a1a1a; /* Koyu Zemin */
+  padding: 40px 0;
+  color: #fff;
+  border-top: 1px solid #333;
+}
+
+.copyright-text {
+  font-size: 0.95rem;
+  color: #b0b0b0;
+}
+
+.copyright-text strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+/* --- Sosyal Medya İkonları --- */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center; /* Mobilde ortalar */
+}
+
+/* Masaüstünde sağa yasla (CSS Specificity ile media query içinde ezilecekse burayı genel bırakıyoruz) */
+@media (min-width: 768px) {
+  .social-icons {
+    justify-content: flex-end;
+  }
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%; /* Tam yuvarlak */
+  background-color: #333; /* Pasif durumu koyu gri */
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Yaylanma efekti */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Hover Efektleri - Orijinal Renkler */
+
+/* GitHub (Siyah/Beyaz) */
+.social-btn.github:hover {
+  background-color: #333; 
+  color: #fff;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* LinkedIn (Mavi) */
+.social-btn.linkedin:hover {
+  background-color: #0077b5;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4);
+}
+
+/* Instagram (Gradient) */
+.social-btn.instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(214, 36, 159, 0.4);
+}
+
+/* Email (Gmail Kırmızısı) */
+.social-btn.email:hover {
+  background-color: #EA4335;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(234, 67, 53, 0.4);
+}
+
+/* Telefon (Yeşil) */
+.social-btn.phone:hover {
+  background-color: #25D366;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
