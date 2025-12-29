@@ -1,94 +1,187 @@
-// Header bileşeni
-import React, { useState, useEffect, useRef } from 'react';
-import './Header.css';
-import { navLinks, heroData } from '../../data/data';
-import { typeWriterEffect } from '../../utils/typewrite';
-
-// Resim importları (Vite yapısına uygun)
-import logoImg from '../../assets/img/site_Logo.png';
-import bgImg from '../../assets/img/background.png';
+// src/components/Header/Header.jsx
+import React, { useState, useEffect } from "react";
+// Kendi oluşturduğumuz feature bileşenini import ediyoruz
+import Typewriter from "../../features/Typewriter";
+import "./Header.css";
 
 const Header = () => {
-  const [activeLink, setActiveLink] = useState('#home');
   const [scrolled, setScrolled] = useState(false);
-  const typeWriterRef = useRef(null);
+  const [activeLink, setActiveLink] = useState("home");
 
-  // Scroll takibi için useEffect
   useEffect(() => {
-    const handleScroll = () => {
-      // 50px aşağı inildiğinde navbar rengi değişsin
+    const onScroll = () => {
       if (window.scrollY > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
     };
+    window.addEventListener("scroll", onScroll);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Bölüm aktifliğini scroll ile güncelle
+    const sectionIds = ["home", "about", "projects", "contact"];
+    const sectionElements = sectionIds.map((id) => document.getElementById(id));
+    let ticking = false;
+    const handleActiveSection = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          let current = "home";
+          for (let i = 0; i < sectionElements.length; i++) {
+            const el = sectionElements[i];
+            if (el) {
+              const rect = el.getBoundingClientRect();
+              if (rect.top <= 120) {
+                current = sectionIds[i];
+              }
+            }
+          }
+          setActiveLink(current);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", handleActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", handleActiveSection);
+    };
   }, []);
 
-  // Daktilo efekti başlatma
-  useEffect(() => {
-    if (typeWriterRef.current) {
-      typeWriterEffect(typeWriterRef.current, heroData.titles, heroData.pauseTime);
-    }
-  }, []);
+  const onUpdateActiveLink = (value) => {
+    setActiveLink(value);
+  };
 
   return (
-    <header id="home" className="header-wrapper" style={{ backgroundImage: `url(${bgImg})` }}>
-      {/* Overlay: Resim üzerine koyuluk ekler, yazı okunurluğu artar */}
-      <div className="overlay"></div>
-
-      {/* Navbar Başlangıcı */}
-      <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? 'navbar-scrolled' : 'navbar-transparent'}`}>
+    <header id="home" className="header-section">
+      {/* --- NAVBAR --- */}
+      <nav
+        className={`navbar navbar-expand-lg fixed-top ${
+          scrolled ? "navbar-scrolled" : ""
+        }`}
+      >
         <div className="container">
-          {/* Logo Bölümü */}
           <a className="navbar-brand" href="#home">
-            <img src={logoImg} alt="Site Logo" className="site-logo" />
+            <img src="/img/site_Logo.png" alt="Logo" className="site-logo" />
           </a>
 
-          {/* Mobil Toggle Button */}
-          <button 
-            className="navbar-toggler" 
-            type="button" 
-            data-bs-toggle="collapse" 
-            data-bs-target="#navbarNav" 
-            aria-controls="navbarNav" 
-            aria-expanded="false" 
-            aria-label="Toggle navigation"
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon-custom">
+              <i
+                className="fa-solid fa-bars-staggered"
+                style={{ color: "#111" }}
+              ></i>
+            </span>
           </button>
 
-          {/* Linkler */}
-          <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul className="navbar-nav">
-              {navLinks.map((link) => (
-                <li key={link.id} className="nav-item">
-                  <a
-                    href={link.path}
-                    className={`nav-link ${activeLink === link.path ? 'active-link' : ''}`}
-                    onClick={() => setActiveLink(link.path)}
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto text-center">
+              <li className="nav-item">
+                <a
+                  href="#home"
+                  className={`nav-link ${
+                    activeLink === "home" ? "active-link" : ""
+                  }`}
+                  onClick={() => onUpdateActiveLink("home")}
+                >
+                  Ana Sayfa
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  href="#about"
+                  className={`nav-link ${
+                    activeLink === "about" ? "active-link" : ""
+                  }`}
+                  onClick={() => onUpdateActiveLink("about")}
+                >
+                  Hakkımda
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  href="#projects"
+                  className={`nav-link ${
+                    activeLink === "projects" ? "active-link" : ""
+                  }`}
+                  onClick={() => onUpdateActiveLink("projects")}
+                >
+                  Projelerim
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  href="#contact"
+                  className={`nav-link ${
+                    activeLink === "contact" ? "active-link" : ""
+                  }`}
+                  onClick={() => onUpdateActiveLink("contact")}
+                >
+                  İletişim
+                </a>
+              </li>
+              {/* CV butonu mobilde de görünsün */}
+              <li className="nav-item d-lg-none mt-3">
+                <a
+                  href="pages/portfolio/portfolio.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button
+                    className="btn btn-sm text-white w-100"
+                    style={{
+                      background: "var(--blue-brand)",
+                      border: "none",
+                      padding: "0.5rem 1.2rem",
+                    }}
                   >
-                    {link.title}
-                  </a>
-                </li>
-              ))}
+                    Bartu Özaşçı CV
+                  </button>
+                </a>
+              </li>
             </ul>
+            <span className="navbar-text ms-lg-4 d-none d-lg-block">
+              <a
+                href="pages/portfolio/portfolio.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button
+                  className="btn btn-sm text-white"
+                  style={{
+                    background: "var(--blue-brand)",
+                    border: "none",
+                    padding: "0.5rem 1.2rem",
+                  }}
+                >
+                  Bartu Özaşçı CV
+                </button>
+              </a>
+            </span>
           </div>
         </div>
       </nav>
 
-      {/* Hero Content (İsim ve Daktilo Efekti) */}
-      <div className="hero-content container text-center">
-        <h1 className="hero-name display-3 fw-bold text-white mb-3">
-          {heroData.name}
-        </h1>
-        <h3 className="hero-titles text-white">
-          I'm a <span ref={typeWriterRef} className="typewrite-text"></span>
-        </h3>
+      {/* --- HERO CONTENT --- */}
+      <div className="hero-container container d-flex flex-column justify-content-center align-items-center text-center">
+        <div className="hero-content">
+          <h1
+            className="hero-name display-title mb-3"
+            style={{ color: "#fff", textShadow: "2px 2px 8px rgba(0,0,0,0.4)" }}
+          >
+            Bartu Özaşçı
+          </h1>
+          <Typewriter />
+        </div>
       </div>
+
+      <div className="overlay"></div>
     </header>
   );
 };

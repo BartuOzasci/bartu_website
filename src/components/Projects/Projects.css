@@ -1,0 +1,169 @@
+/* Projelerim başlığı siyah */
+.display-title {
+  color: #111 !important;
+}
+/* src/components/Projects/Projects.css */
+
+.projects-section {
+  padding: 100px 0;
+  /* Hafif farklı bir zemin rengi vererek ayrışmasını sağlayabiliriz */
+  
+}
+
+/* --- Kart Yapısı --- */
+.project-card {
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  overflow: hidden; /* Taşmaları gizle (Overlay için önemli) */
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Overlay'i konumlandırmak için referans */
+  height: 100%; /* Kartları eşit boyda tutar */
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+/* --- Resim Alanı --- */
+.project-img-container {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Resme hover olunca zoom yap */
+.project-img-container:hover .project-img {
+  transform: scale(1.1);
+}
+
+/* Resmin üzerindeki link ikonu (Başta gizli) */
+.img-overlay-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 2rem;
+  color: white;
+}
+
+.project-img-container:hover .img-overlay-icon {
+  opacity: 1;
+}
+
+/* --- Bilgi Alanı --- */
+.project-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-category {
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.project-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+}
+
+/* --- Detay Butonu --- */
+.btn-details {
+  margin-top: auto; /* En alta iter */
+  align-self: flex-start; /* Sola yaslar */
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-details:hover {
+  background: var(--surface-glass);
+  color: var(--text-main);
+  border-color: var(--primary-color);
+}
+
+/* --- Animasyonlu Perde (Overlay) --- */
+.project-details-overlay {
+  position: absolute;
+  left: 0;
+  bottom: -100%; /* Başlangıçta kartın altında gizli */
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.95); /* Çok koyu, hafif saydam lacivert */
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Yumuşak kayma efekti */
+  z-index: 10;
+}
+
+/* Aktif olunca yukarı çıkar */
+.project-details-overlay.active {
+  bottom: 0;
+}
+
+.overlay-content {
+  position: relative;
+  text-align: center;
+}
+
+.overlay-title {
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+  margin-bottom: 1rem;
+}
+
+.overlay-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.btn-close-overlay {
+  position: absolute;
+  top: -40px;
+  right: -10px;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-close-overlay:hover {
+  transform: rotate(90deg);
+  color: var(--danger);
+}

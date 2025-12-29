@@ -1,0 +1,40 @@
+/* src/utils/fonts.css */
+
+/* Google Fonts Import */
+/* Space Grotesk: Başlıklar için modern ve teknik bir duruş */
+/* Outfit: Gövde metinleri için geometrik ve okunaklı */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+}
+
+/* Genel Tipografi Ayarları */
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased; /* Fontların daha pürüzsüz görünmesini sağlar */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Başlıklar İçin Özel Stil */
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em; /* Modern "sıkı" harf aralığı */
+  font-weight: 700;
+}
+
+/* Büyük Başlık (Hero Section için) */
+.display-title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Buton Fontları */
+.btn {
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}

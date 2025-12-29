@@ -1,43 +1,62 @@
+// src/components/About/About.jsx
 import React from 'react';
+import { aboutData } from '../../storage/data';
 import './About.css';
-import { aboutData } from '../../data/data';
-import bartuImg from '../../assets/img/bartuPP.png';
 
 const About = () => {
   return (
-    <section id="about" className="about-section py-5">
+    <section id="about" className="about-section">
       <div className="container">
-        <div className="row align-items-center justify-content-between">
+        
+        {/* Bölüm Başlığı (Mobil için üstte de görünebilir ama aşağıda kartın içine aldık) */}
+        
+        <div className="row align-items-center gy-5">
           
-          {/* Sol Taraf: Fotoğraf Alanı */}
-          <div className="col-lg-5 col-md-12 mb-5 mb-lg-0 text-center">
-            <div className="image-frame-wrapper">
-              {/* Dekoratif arka çerçeve */}
-              <div className="frame-backdrop"></div>
-              {/* Asıl Resim */}
-              <img src={bartuImg} alt="Bartu Özaşçı" className="img-fluid profile-img" />
+          {/* --- GÖRSEL ALANI (Sol) --- */}
+          <div className="col-lg-5 position-relative">
+            <div className="about-img-wrapper">
+              {/* Dekoratif Çerçeve (Arka Plandaki) */}
+              <div className="about-frame-back"></div>
+              
+              {/* Ana Resim */}
+              <img 
+                src={aboutData.imgSrc} 
+                alt="Bartu Özaşçı Hakkımda" 
+                className="img-fluid about-img" 
+              />
+              
+              {/* Dekoratif Köşe Çizgileri (Teknik görünüm için) */}
+              <div className="corner-decor top-right"></div>
+              <div className="corner-decor bottom-left"></div>
             </div>
           </div>
 
-          {/* Sağ Taraf: Yazı ve Butonlar */}
-          <div className="col-lg-6 col-md-12">
-            <div className="content-frame">
-              <h2 className="section-title mb-4">{aboutData.title}</h2>
+          {/* --- METİN ALANI (Sağ) --- */}
+          <div className="col-lg-7">
+            <div className="about-content-card">
+              <h2 className="section-title mb-4">
+                <span className="text-gradient">{aboutData.title}</span>
+              </h2>
               
-              <div className="text-content">
-                {aboutData.paragraphs.map((text, index) => (
-                  <p key={index} className="about-text">
-                    {text}
+              <div className="about-text">
+                {aboutData.description.map((paragraph, index) => (
+                  <p key={index} className="mb-3">
+                    {paragraph}
                   </p>
                 ))}
               </div>
 
-              <div className="button-group mt-4 d-flex gap-3">
-                <a href={aboutData.btn1.link} className="btn btn-custom-primary">
-                  <i className="bi bi-images me-2"></i> {aboutData.btn1.text}
-                </a>
-                <a href={aboutData.btn2.link} className="btn btn-custom-outline" target="_blank" rel="noreferrer">
-                  <i className="bi bi-file-earmark-person me-2"></i> {aboutData.btn2.text}
+              {/* Galeri Butonu */}
+              <div className="mt-4">
+                <a
+                  href="/pages/gallery/galeri.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-gallery"
+                  style={{ textDecoration: 'none', display: 'inline-block' }}
+                >
+                  <span>{aboutData.btnText}</span>
+                  <i className="fa-solid fa-arrow-right-long ms-2"></i>
                 </a>
               </div>
             </div>

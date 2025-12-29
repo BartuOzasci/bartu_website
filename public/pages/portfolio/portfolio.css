@@ -1,0 +1,380 @@
+@media (min-width: 768px) {
+  .profile-img-container {
+    margin-bottom: 1.5rem;
+  }
+  .contact-info-card {
+    margin-bottom: 1rem;
+  }
+  .col-md-5 > .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* --- Sosyal Butonlar --- */
+.contact-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  background: #6366f1;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+}
+.contact-social-btn.linkedin {
+  background: #0077b5;
+}
+.contact-social-btn.github {
+  background: #24292e;
+}
+.contact-social-btn.gmail {
+  background: #ea4335;
+}
+.contact-social-btn.phone {
+  background: #10b981;
+}
+.contact-social-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.18);
+  opacity: 0.92;
+}
+.contact-social-btn i {
+  font-size: 1.2em;
+}
+
+/* --- Alt Bilgi Kartı --- */
+.contact-info-card {
+  margin: 0 auto;
+  margin-top: 32px;
+  max-width: 350px;
+  background: #fff;
+  border: 2px solid #6366f1;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.1);
+  padding: 18px 20px;
+  text-align: center;
+}
+.contact-info-line {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 4px;
+  font-family: "Poppins", Arial, sans-serif;
+}
+.contact-info-line:first-child {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #6366f1;
+}
+:root {
+  --primary-color: #0f172a;
+  --accent-color: #38bdf8;
+  --bg-light: #f8fafc;
+  --text-dark: #334155;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  padding-top: 80px; /* Navbar fixed olduğu için üstten boşluk */
+}
+
+/* --- Navbar Özelleştirme --- */
+.navbar {
+  background-color: var(--primary-color);
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 400;
+  margin-left: 15px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent-color) !important;
+}
+
+/* Link altı çizgi animasyonu */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.back-btn {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border-radius: 50px;
+  padding: 5px 20px;
+  font-size: 0.9rem;
+}
+
+.back-btn:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
+}
+
+/* --- Hero Section & Card --- */
+.hero-section {
+  min-height: 80vh; /* Ekranın %80'ini kaplasın */
+  padding: 40px 0;
+}
+
+.hero-card {
+  background: #fff;
+  border-radius: 20px; /* Kartın köşelerini yuvarla */
+  overflow: hidden;
+}
+
+/* Resim Çerçevesi */
+.profile-img {
+  border: 5px solid var(--accent-color); /* Yuvarlak çerçeve rengi */
+  padding: 5px; /* Çerçeve ile resim arası boşluk */
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05); /* Üzerine gelince hafif büyüme */
+}
+
+/* Küçük Detaylar */
+.ls-2 {
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+}
+
+/* --- Bölüm Ayarları --- */
+.section-padding {
+  padding: 100px 0;
+}
+
+.divider {
+  height: 4px;
+  width: 60px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* --- Deneyim Kartı Tasarımı --- */
+.experience-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px; /* Kart köşelerini yuvarla */
+  overflow: hidden;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px); /* Kart üzerine gelince hafif yukarı kalksın */
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Sol taraftaki logo kutusu */
+.company-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.company-logo img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Metin Stilleri */
+.job-title {
+  color: var(--accent-color); /* Vurgu rengi */
+  font-weight: 600;
+}
+
+/* Liste Stilleri (Maddeler) */
+.experience-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.experience-list li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+/* --- Responsive Ayarlar --- */
+
+/* Masaüstünde (768px ve üzeri) araya dikey çizgi koy */
+@media (min-width: 768px) {
+  .border-end-md {
+    border-right: 1px solid #e2e8f0;
+  }
+}
+
+/* Mobilde (768px altı) çizgiyi kaldır ve boşlukları ayarla */
+@media (max-width: 767.98px) {
+  .border-end-md {
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* --- YETENEK KARTLARI (TEKNİK) --- */
+.skill-card {
+  background-color: #fff;
+  padding: 25px 15px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Yaylanma efekti */
+}
+
+.skill-card:hover {
+  transform: translateY(-8px); /* Yukarı kalkma */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent-color);
+}
+
+.skill-card:hover .icon-box {
+  color: var(--accent-color) !important;
+  transform: scale(1.1);
+}
+
+.icon-box {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* --- DİL KARTLARI --- */
+.language-card {
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.language-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08) !important;
+  border-color: var(--accent-color) !important;
+}
+
+.flag-icon {
+  width: 45px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- SERTİFİKA KARTLARI --- */
+.cert-card {
+  cursor: pointer; /* Tıklanabilir olduğunu göster */
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+}
+
+.cert-img-wrapper {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden; /* Resim büyürse dışarı taşmasın */
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.cert-img {
+  width: 100%;
+  height: 180px; /* Tüm sertifikalar eşit yükseklikte dursun */
+  object-fit: cover; /* Resmi orantılı kırp */
+  transition: transform 0.5s ease;
+}
+
+/* Hover Efekti: Resim Büyümesi */
+.cert-card:hover .cert-img {
+  transform: scale(1.1);
+}
+
+/* Hover Efekti: Siyah Perde ve İkon */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.4); /* Yarı saydam koyu renk */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Başlangıçta görünmez */
+  transition: opacity 0.3s ease;
+}
+
+.overlay i {
+  color: #fff;
+  font-size: 2rem;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover .overlay {
+  opacity: 1; /* Görünür yap */
+}
+
+.cert-card:hover .overlay i {
+  transform: scale(1); /* İkonu büyüt */
+}
+
+.cert-title {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+/* --- FOOTER --- */
+footer small {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7); /* Hafif grimsi beyaz */
+  letter-spacing: 1px;
+}

@@ -1,0 +1,57 @@
+/* src/utils/colors.css */
+
+:root {
+  /* --- Ana Temel Renkler (Brand Colors) --- */
+  --primary-color: #6366f1;       /* Modern Indigo - Güven ve teknoloji hissi */
+  --primary-hover: #4f46e5;       /* Hover durumu için koyu indigo */
+  --secondary-color: #ec4899;     /* Vibrant Pink - Enerjik vurgular için */
+  --accent-color: #14b8a6;        /* Teal - Tamamlayıcı, modern yeşil */
+
+  /* --- Arka Plan ve Yüzeyler (Modern Dark/Light Base) --- */
+  --bg-dark: #0f172a;             /* Tam siyah yerine derin lacivert-gri (Slate 900) */
+  --bg-card: #1e293b;             /* Kartlar için biraz daha açık ton (Slate 800) */
+  --bg-light: #f8fafc;            /* Göz yormayan kırık beyaz */
+  --surface-glass: rgba(30, 41, 59, 0.7); /* Glassmorphism efekti için yarı saydam */
+
+  /* --- Metin Renkleri (Typography) --- */
+  --text-main: #f1f5f9;           /* Koyu zemin üstüne ana metin */
+  --text-muted: #94a3b8;          /* İkincil metinler, açıklamalar */
+  --text-dark: #1e293b;           /* Açık zemin üstüne koyu metin */
+
+  /* --- Modern Gradyanlar (Gradients) --- */
+  /* Butonlar veya Hero alanları için şık geçişler */
+  --gradient-main: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); /* Indigo -> Purple */
+  --gradient-sunset: linear-gradient(135deg, #f43f5e 0%, #fb923c 100%); /* Rose -> Orange */
+  --gradient-ocean: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); /* Cyan -> Blue */
+
+  /* --- Durum Renkleri (Utility) --- */
+  --success: #10b981;             /* Zümrüt yeşili */
+  --warning: #f59e0b;             /* Amber */
+  --danger: #ef4444;              /* Soft Kırmızı */
+  
+  /* --- Kenarlık ve Çizgiler --- */
+  --border-color: rgba(148, 163, 184, 0.2); /* İnce, zarif ayrımlar için */
+
+  /* YENİ EKLENEN MAVİ RENKLER */
+  --blue-brand: #3b82f6;       /* Canlı, modern mavi */
+  --blue-hover: #2563eb;       /* Hover olunca biraz daha koyu */
+  --gradient-blue: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); /* Şık geçişli mavi */
+}
+
+
+
+
+/* Bootstrap Sınıflarını Ezme (Opsiyonel Helper Sınıflar) */
+.text-gradient {
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-glass {
+  background: var(--surface-glass);
+  backdrop-filter: blur(10px); /* Arka planı bulanıklaştırır */
+  border: 1px solid var(--border-color);
+}
+

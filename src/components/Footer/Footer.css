@@ -1,84 +1,68 @@
-/* Footer stilleri */
-.footer-wrapper {
-  background-color: #1a1a1a; /* Koyu Zemin */
-  padding: 40px 0;
-  color: #fff;
-  border-top: 1px solid #333;
+/* src/components/Footer/Footer.css */
+
+.footer-section {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-dark); /* Kökten siyahı al */
+  margin-top: 50px;
 }
 
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* --- Sol Kısım --- */
 .copyright-text {
+  color: var(--text-muted);
+  font-family: var(--font-body);
   font-size: 0.95rem;
-  color: #b0b0b0;
 }
 
-.copyright-text strong {
-  color: #fff;
+.footer-name {
+  color: var(--text-main);
   font-weight: 700;
+  font-family: var(--font-heading);
 }
 
-/* --- Sosyal Medya İkonları --- */
+/* --- İkonlar ve Animasyon --- */
 .social-icons {
   display: flex;
-  gap: 15px;
-  justify-content: center; /* Mobilde ortalar */
+  gap: 12px;
 }
 
-/* Masaüstünde sağa yasla (CSS Specificity ile media query içinde ezilecekse burayı genel bırakıyoruz) */
-@media (min-width: 768px) {
-  .social-icons {
-    justify-content: flex-end;
-  }
-}
-
-.social-btn {
+.social-link {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 45px;
   height: 45px;
-  border-radius: 50%; /* Tam yuvarlak */
-  background-color: #333; /* Pasif durumu koyu gri */
-  color: #fff;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05); /* Sönük arkaplan */
+  border: 1px solid var(--border-color);
+  color: var(--text-muted); /* İkon rengi */
   font-size: 1.2rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Yaylanan geçiş */
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Yaylanma efekti */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Hover Efektleri - Orijinal Renkler */
-
-/* GitHub (Siyah/Beyaz) */
-.social-btn.github:hover {
-  background-color: #333; 
-  color: #fff;
+/* Hover Efekti: Orijinal Marka Rengi */
+.social-link:hover {
+  /* JSX'ten gelen --hover-color değişkenini kullan */
+  background: var(--hover-color); 
+  border-color: var(--hover-color);
+  color: white; /* İkon beyaz olur */
   transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* LinkedIn (Mavi) */
-.social-btn.linkedin:hover {
-  background-color: #0077b5;
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4);
-}
-
-/* Instagram (Gradient) */
-.social-btn.instagram:hover {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 5px 15px rgba(214, 36, 159, 0.4);
-}
-
-/* Email (Gmail Kırmızısı) */
-.social-btn.email:hover {
-  background-color: #EA4335;
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 5px 15px rgba(234, 67, 53, 0.4);
-}
-
-/* Telefon (Yeşil) */
-.social-btn.phone:hover {
-  background-color: #25D366;
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+/* Mobil Uyum */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
 }

@@ -1,30 +1,26 @@
-// Sayfa yönlendirmelerinin (Route) yapıldığı merkez
+// src/App.jsx
 import React from 'react';
 
-// Bileşenlerin İçe Aktarılması
+// Bileşenler
 import Header from './components/Header/Header';
 import About from './components/About/About';
-import ProjectsSection from './components/ProjectsSection/ProjectsSection';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
+import Projects from './components/Projects/Projects';
+import Contact from './components/Contact/Contact'; // Yeni
+import Footer from './components/Footer/Footer';    // Yeni
 
 function App() {
   return (
-    <div className="App">
+    // Global zemin rengi burada tanımlı
+    <div style={{ backgroundColor: 'var(--bg-light)', minHeight: '100vh', color: 'var(--text-main)', display: 'flex', flexDirection: 'column' }}>
       
-      {/* 1. Navbar ve Hero Alanı */}
       <Header />
+      
+      <main style={{ flex: 1 }}>
+        <About />
+        <Projects />
+        <Contact />
+      </main>
 
-      {/* 2. Hakkımda Bölümü */}
-      <About />
-
-      {/* 3. Projeler Bölümü */}
-      <ProjectsSection />
-
-      {/* 4. İletişim Formu */}
-      <Contact />
-
-      {/* 5. Alt Bilgi (Footer) */}
       <Footer />
 
     </div>

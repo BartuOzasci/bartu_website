@@ -1,52 +1,74 @@
+/* src/components/Contact/Contact.css */
+
 .contact-section {
-  background-color: #f0f2f5; /* Çok hafif gri arka plan */
+  padding: 100px 0;
+  position: relative;
+  /* Sayfa genelinde arkaplan olmadığı için transparan bırakıyoruz */
 }
 
-/* Kart Tasarımı */
 .contact-card {
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border-top: 5px solid #0dcaf0; /* Üstte ince cyan çizgi */
+  background: #f3f4f6; /* Beyaza yakın açık gri (Tailwind slate-100) */
+  padding: 3rem;
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  /* Hafif Glassmorphism dokunuşu */
+  backdrop-filter: blur(10px);
+}
+
+/* --- Özel Input Tasarımı --- */
+.custom-input {
+  background: rgba(255, 255, 255, 0.03); /* Çok hafif beyaz dolgu */
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: #000;
+  padding: 1rem 1.2rem;
+  font-family: var(--font-body);
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary-color); /* Indigo rengi ile focus */
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+  color: #000;
+}
+
+.custom-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* --- Gönder Butonu --- */
+.btn-send {
+  background: var(--gradient-main);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-}
-
-/* Input Alanları Özelleştirme */
-.form-floating > .form-control {
-  border: 2px solid #eee;
-  border-radius: 10px;
-}
-
-.form-floating > .form-control:focus {
-  border-color: #0dcaf0; /* Focus olunca cyan */
-  box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
-}
-
-.form-floating > label {
-  color: #aaa;
-}
-
-/* Gönder Butonu */
-.btn-send {
-  background-color: #212529; /* Koyu gri/Siyah */
-  color: #fff;
-  padding: 12px 40px;
-  border-radius: 50px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  border: none;
-}
-
 .btn-send:hover {
-  background-color: #0dcaf0; /* Hover'da cyan */
-  color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(13, 202, 240, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+.btn-send i {
+  transition: transform 0.3s ease;
+}
+
+.btn-send:hover i {
+  transform: translateX(5px) rotate(-10deg);
+}
+
+/* Mobil Uyum */
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 1.5rem;
+  }
 }
