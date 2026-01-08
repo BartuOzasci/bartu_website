@@ -128,11 +128,7 @@ const Header = () => {
               </li>
               {/* CV butonu mobilde de görünsün */}
               <li className="nav-item d-lg-none mt-3">
-                <a
-                  href="pages/portfolio/portfolio.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="pages/portfolio/portfolio.html">
                   <button
                     className="btn btn-sm text-white w-100"
                     style={{
@@ -147,11 +143,7 @@ const Header = () => {
               </li>
             </ul>
             <span className="navbar-text ms-lg-4 d-none d-lg-block">
-              <a
-                href="pages/portfolio/portfolio.html"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="pages/portfolio/portfolio.html">
                 <button
                   className="btn btn-sm text-white"
                   style={{

@@ -12,6 +12,11 @@
       href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="shortcut icon"
+      href="../../img/site_Logo.png"
+      type="image/x-icon"
+    />
 
     <style>
       body {
@@ -157,16 +162,16 @@
       }
 
       .card-img-top {
-        filter: grayscale(100%) contrast(120%);
         transition: filter 0.3s;
         cursor: pointer;
         height: 200px;
         object-fit: cover;
         border-bottom: 1px solid #333;
+        filter: none;
       }
 
       .project-card:hover .card-img-top {
-        filter: grayscale(0%) contrast(100%);
+        filter: none;
       }
 
       .card-title {
@@ -250,35 +255,36 @@
         <div class="row g-4">
           <div class="col-md-6 col-lg-4">
             <div class="card project-card">
-              <a href="https://google.com" target="_blank">
+              <a
+                href="https://tic-tac-toe-football.netlify.app"
+                target="_blank"
+              >
                 <img
-                  src="https://placehold.co/600x400/050505/00FF00/png?text=Project+Alpha"
+                  src="tictactoe.683Z.png"
                   class="card-img-top"
                   alt="Proje 1"
                 />
               </a>
               <div class="card-body text-center">
-                <h5 class="card-title">> E-Ticaret_v2.0</h5>
-                <p class="card-text">
-                  React ve Node.js tabanlı tam kapsamlı sistem.
-                </p>
+                <h5 class="card-title">Futbolcu Tic-Tac-Toe</h5>
+                <p class="card-text">Futbolcu xox oyunu</p>
               </div>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4">
             <div class="card project-card">
-              <a href="https://github.com" target="_blank">
+              <a href="https://bartugrafikyatirim.netlify.app" target="_blank">
                 <img
-                  src="https://placehold.co/600x400/050505/00FF00/png?text=Cyber+Tool"
+                  src="grafiktakip.674Z.png"
                   class="card-img-top"
                   alt="Proje 2"
                 />
               </a>
               <div class="card-body text-center">
-                <h5 class="card-title">> Net_Scanner.py</h5>
+                <h5 class="card-title">Yatırım Grafik Uygulaması</h5>
                 <p class="card-text">
-                  Python ile geliştirilmiş ağ güvenlik ve tarama aracı.
+                  Haftalık Yatırımların Grafiksel Gösterimi.
                 </p>
               </div>
             </div>
@@ -286,17 +292,17 @@
 
           <div class="col-md-6 col-lg-4">
             <div class="card project-card">
-              <a href="#" target="_blank">
+              <a href="https://promptlibbartu.netlify.app" target="_blank">
                 <img
-                  src="https://placehold.co/600x400/050505/00FF00/png?text=Mobile+App"
+                  src="promptlib.983Z.png"
                   class="card-img-top"
                   alt="Proje 3"
                 />
               </a>
               <div class="card-body text-center">
-                <h5 class="card-title">> Flutter_Social</h5>
+                <h5 class="card-title">Prompt Library</h5>
                 <p class="card-text">
-                  Cross-platform mobil sosyal medya uygulaması.
+                  Hazır ve kendi promptlarını bulabileceğin kütüphane.
                 </p>
               </div>
             </div>

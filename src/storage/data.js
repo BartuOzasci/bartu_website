@@ -10,11 +10,10 @@ export const aboutData = {
   title: "Hakkımda",
   // Metni paragraflara bölerek dizi haline getirdik
   description: [
-    "Ben Bartu ÖZAŞÇI, 2 Aralık 2000 tarihinde İzmir/Konak’ta doğdum. İlköğrenimime 2007 yılında Balıkesir’de bulunan Karesi İstiklal Koleji’nde başladım ve 2012 yılında tamamladım. Ortaöğrenimime, okul ismimizin değişmesiyle Doğa Koleji bünyesinde devam ederek 2015 yılında mezun oldum. Ardından Balıkesir Cumhuriyet Anadolu Lisesi’nde başladığım lise eğitimimi, 2017 yılında geçiş yaptığım Karesi Temel Lisesi’nde 2019 yılında tamamladım.",
-    "Aynı yıl girdiğim üniversite sınavı sonucunda Eskişehir Osmangazi Üniversitesi İnşaat Mühendisliği Bölümü’ne yerleştim ve 2024 yılında lisans eğitimimi başarıyla tamamladım.",
-    "Akademik yolculuğuma lisansüstü seviyede devam ederek, danışmanım Prof. Dr. Hakan Özbaşaran eşliğinde İnşaat Mühendisliğinde Yapay Zeka alanında yüksek lisans çalışmalarımı sürdürmekteyim.",
-    "Bunun yanı sıra, remote (uzaktan) olarak kurumsal bir şirkette Yapay Zeka Mühendisi pozisyonunda görev yapmaktayım. Boş zamanlarımda yazılım geliştirmek, çeşitli programlar oluşturmak ve yapay zeka modelleri tasarlamakla ilgileniyorum.",
-    "Bu portfolyo sitesi, hem hobilerimin hem de çalışmalarımın bir yansıması olarak hazırlanmıştır.",
+    "Ben Bartu Özaşçı. 2 Aralık 2000 tarihinde İzmir, Konak’ta doğdum. İlk ve ortaöğrenimimi Balıkesir'de tamamladıktan sonra, lise eğitimime Balıkesir Cumhuriyet Anadolu Lisesi’nde başlayıp 2019 yılında Karesi Temel Lisesi’nden mezun oldum.",
+    "2024 yılında Eskişehir Osmangazi Üniversitesi İnşaat Mühendisliği Bölümü’ndeki lisans eğitimimi başarıyla tamamladım.",
+    "Şu anda akademik kariyerime aynı üniversitede devam ediyor; Prof. Dr. Hakan Özbaşaran danışmanlığında, 'İnşaat Mühendisliğinde Yapay Zeka' üzerine yüksek lisans çalışmalarımı sürdürüyorum.",
+    "Akademik çalışmalarımın yanı sıra yazılım geliştirmek, algoritmalar tasarlamak ve yapay zeka modelleri eğitmek en büyük tutkumdur. Hem hobilerimin hem de profesyonel çalışmalarımın bir yansıması olan bu portfolyo sitesine hoş geldiniz.",
   ],
   btnText: "Galeri",
   imgSrc: "/img/about.jpeg", // Görsel yolunu buraya tanımladık
@@ -32,7 +31,7 @@ export const projectsData = [
     imgSrc: "/img/yatirimBartu.889Z.png",
     link: "https://bartuyatirimapp.netlify.app", // Buraya gerçek link gelecek
     description:
-      "React ve Node.js kullanılarak geliştirilmiş, yapay zeka destekli ürün öneri sistemi içeren kapsamlı bir e-ticaret platformu. Stripe ödeme altyapısı entegre edilmiştir.",
+      "Html5, CSS3 ve JavaScript(ES6) kullanılarak geliştirilmiş basit bir yatırım hesaplama uygulaması.Responsive tasarımı sayesinde farklı cihazlarda sorunsuz çalışır.",
   },
 
   {
@@ -42,7 +41,27 @@ export const projectsData = [
     imgSrc: "/img/topsecret.517Z.png",
     link: "pages/secretBartu/bartu.html", // Buraya gerçek link gelecek
     description:
-      "React ve Node.js kullanılarak geliştirilmiş, yapay zeka destekli ürün öneri sistemi içeren kapsamlı bir e-ticaret platformu. Stripe ödeme altyapısı entegre edilmiştir.",
+      "Kişisel projelerimi ve uygulamalarımın bulunduğu bana özel bir web sitesi.",
+  },
+
+  {
+    id: 3,
+    title: "Kart Eşleştirme Oyunu",
+    category: "Games",
+    imgSrc: "/img/cardmatching.505Z.png",
+    link: "pages/card_match/card.html", // Buraya gerçek link gelecek
+    description:
+      "Html5, CSS3 ve JavaScript(ES5) kullanılarak geliştirilmiş eğlenceli bir kart eşleştirme oyunu.",
+  },
+
+  {
+    id: 4,
+    title: "Dosya Analiz Chatbot",
+    category: "NLP",
+    imgSrc: "/img/chatbotpdf.301Z.png",
+    link: "https://github.com/BartuOzasci/AI_Assistant_with_RAG", // Buraya gerçek link gelecek
+    description:
+      "Bu proje, RAG mimarisine sahip bir yapay zeka asistanıdır. Python diliyle geliştirilen uygulamada; web arayüzü için Flask, vektör araması ve veri tabanı için FAISS, metinleri vektörlere dönüştürmek için SentenceTransformer ve doğal dil işleme/yanıt üretimi için Google Gemini modelleri kullanılmaktadır. ",
   },
 ];
 
