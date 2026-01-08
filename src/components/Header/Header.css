@@ -157,6 +157,15 @@ button[style*="--blue-brand"]:hover {
   .navbar-nav .nav-link.active-link::after {
     display: none; /* Mobilde alt çizgiyi gizle, sadece renk parlasın */
   }
+
+  .header-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Tüm ekranı kapla */
+  background: url('/public/img/background.png') no-repeat center center/cover;
+  background-attachment: fixed; /* Parallax benzeri sabit arka plan hissi */
+  overflow: hidden;
+  }
 }
 
 
