@@ -51,6 +51,18 @@
   transition: 0.3s ease;
 }
 
+@media (max-width: 767px) {
+  .site-logo {
+    max-width: 120px;
+    max-height: 40px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    margin: 0 8px;
+    display: block;
+  }
+}
+
 /* Linklerin Genel Hali */
 .navbar-nav .nav-link {
   font-family: var(--font-body);
