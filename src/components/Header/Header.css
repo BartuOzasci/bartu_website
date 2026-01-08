@@ -162,7 +162,7 @@ button[style*="--blue-brand"]:hover {
   position: relative;
   width: 100%;
   height: 100vh; /* Tüm ekranı kapla */
-  background: url('/public/img/background.png') no-repeat center center/cover;
+  background: url('/public/img/kapak.772Z.png') no-repeat center center/cover;
   background-attachment: fixed; /* Parallax benzeri sabit arka plan hissi */
   overflow: hidden;
   }
