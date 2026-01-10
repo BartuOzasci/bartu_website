@@ -63,6 +63,17 @@ export const projectsData = [
     description:
       "Bu proje, RAG mimarisine sahip bir yapay zeka asistanıdır. Python diliyle geliştirilen uygulamada; web arayüzü için Flask, vektör araması ve veri tabanı için FAISS, metinleri vektörlere dönüştürmek için SentenceTransformer ve doğal dil işleme/yanıt üretimi için Google Gemini modelleri kullanılmaktadır. ",
   },
+
+   {
+    id: 5,
+    title: "İstanbul Trafik Forecasting",
+    category: "Forecasting",
+    imgSrc: "/img/chatbotpdf.301Z.png",
+    link: "https://github.com/BartuOzasci/Traffic_TSA_Forecasting", // Buraya gerçek link gelecek
+    description:
+      "Bu proje, Python tabanlı bir makine öğrenmesi sistemi olarak geliştirilmiştir ve XGBoost algoritması ile zaman serisi forecasting yapmaktadır. Veri işleme için Pandas ve NumPy, model değerlendirme için Scikit-learn, görselleştirme için Matplotlib kütüphaneleri kullanılmıştır. ",
+  },
+  
 ];
 
 // src/storage/data.js
