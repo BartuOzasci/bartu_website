@@ -154,28 +154,4 @@ document.addEventListener("allImagesLoaded", () => {
   `);
 });
 
-/* js gui */
-const PARAMS = {
-  size: density,
-  distance: 0,
-  speed: speed,
-};
 
-const pane = new Pane();
-const size = pane.addBinding(PARAMS, "boyut", { min: 2, max: 8, step: 1 });
-size.on("change", function (ev) {
-  density = ev.value;
-  renderWalls();
-});
-const dis = pane.addBinding(PARAMS, "mesafe", { min: 0, max: 100, step: 1 });
-dis.on("change", function (ev) {
-  distance = ev.value;
-  document
-    .querySelector(".inf-grid-hero-container")
-    .style.setProperty("--rev-dis", distance);
-});
-const spd = pane.addBinding(PARAMS, "hız", { min: 50, max: 400, step: 50 });
-spd.on("change", function (ev) {
-  speed = ev.value;
-  startImageInterval();
-});
