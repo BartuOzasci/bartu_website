@@ -73,6 +73,16 @@ export const projectsData = [
     description:
       "Bu proje, Python tabanlı bir makine öğrenmesi sistemi olarak geliştirilmiştir ve XGBoost algoritması ile zaman serisi forecasting yapmaktadır. Veri işleme için Pandas ve NumPy, model değerlendirme için Scikit-learn, görselleştirme için Matplotlib kütüphaneleri kullanılmıştır. ",
   },
+
+  {
+    id: 6,
+    title: "Streamlit PDF Destek Botu",
+    category: "NLP",
+    imgSrc: "/img/streamlit_bot.528Z.png",
+    link: "https://github.com/BartuOzasci/Streamlit_Customer_Support_Bot", // Buraya gerçek link gelecek
+    description:
+      "Bu proje, PDF dosyalarından bilgi çıkarıp vektör tabanlı arama (RAG) ile kullanıcı sorularına yanıt veren bir yapay zeka destekli sohbet botu içerir. Streamlit arayüzüyle kolay kullanım sunar ve FAISS ile hızlı bellek erişimi sağlar. ",
+  },
   
 ];
 
